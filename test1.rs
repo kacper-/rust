@@ -1,9 +1,9 @@
 use std::time::Instant;
 
 fn main() {
-    const FROM: u128 = 100000000;
-    const TO: u128 = 100010000;
-    let limit: u128 = (TO as f64).sqrt() as u128;
+    const FROM: u32 = 1000000000;
+    const TO: u32 = 1000100000;
+    let limit: u32 = (TO as f64).sqrt() as u32;
     let mut a: [u8; (TO - FROM) as usize] = [0; (TO - FROM) as usize]; 
 
     let start = Instant::now();
@@ -18,11 +18,13 @@ fn main() {
     }
 
     let elapsed = start.elapsed();
-    println!("time = {}", elapsed.as_millis());
+    
 
-    // for n in FROM..TO {
-    //     if a[(n - FROM) as usize] == 0 {
-    //         println!("{}",n);
-    //     }
-    // }
+    for n in FROM..TO {
+        if a[(n - FROM) as usize] == 0 {
+            println!("{}",n);
+        }
+    }
+
+    println!("time = {}", elapsed.as_millis());
 }
