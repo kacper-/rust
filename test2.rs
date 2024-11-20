@@ -6,16 +6,14 @@ fn print_number(a: &[i8]) {
 }
 
 fn main() {
- let x: [i8; 3] = [1,2,3];
- let y: [i8; 3] = [1,2,3];
- let mut r: [i8; 6] = [0,0,0,0,0,0];
- let mut temp: i8;
+ let x: [i8; 10] = [1,2,3,4,5,6,7,8,9,0];
+ let y: [i8; 10] = [1,2,3,4,5,6,7,8,9,0];
+ let mut r: [i8; 20] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
  let mut kpos: usize;
 
  for i in 0..x.len() {
     for j in 0..y.len() {
-        temp = x[x.len()-i-1]*y[y.len()-j-1];
-        r[r.len()-i-j-1] += temp;
+        r[r.len()-i-j-1] += x[x.len()-i-1]*y[y.len()-j-1];
     }
     for k in 0..r.len()-1 {
         kpos = r.len()-k-1;
