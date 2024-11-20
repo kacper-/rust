@@ -5,11 +5,21 @@ fn print_number(a: &[i8]) {
     println!("");
 }
 
+fn fill(a: &mut [i8], s: usize) {
+    for i in 0..s {
+        a[i] = (i % 10) as i8;
+    }
+}
+
 fn main() {
- let x: [i8; 10] = [1,2,3,4,5,6,7,8,9,0];
- let y: [i8; 10] = [1,2,3,4,5,6,7,8,9,0];
- let mut r: [i8; 20] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+ const SIZE: usize = 200000;
+ let mut x: [i8; SIZE/2] = [0; SIZE/2];
+ let mut y: [i8; SIZE/2] = [0; SIZE/2];
+ let mut r: [i8; SIZE] = [0; SIZE];
  let mut kpos: usize;
+
+ fill(&mut x, SIZE/2);
+ fill(&mut y, SIZE/2);
 
  for i in 0..x.len() {
     for j in 0..y.len() {
