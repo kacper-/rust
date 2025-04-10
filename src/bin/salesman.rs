@@ -7,22 +7,22 @@ struct Points {
 fn p2p(from: Points, to: Points) -> float64 {
 	let xd: float64 = from.x - to.x;
 	let yd: float64 = from.y - to.y;
-	d = float64(xd*xd) + float64(yd*yd)
-	d = math.Sqrt(d)
+	d = float64(xd*xd) + float64(yd*yd);
+	d = math.Sqrt(d);
 	return
 }
 
-fn dist(idx []int, points []Points) (sum float64) {
-	sum = 0
-	for i := 1; i < len(idx); i++ {
+fn dist(idx: &[int], points: &[Points]) -> float64 {
+	sum = 0;
+	for i in 1..len(idx) {
 		sum += p2p(points[idx[i-1]], points[idx[i]])
 	}
-	sum += p2p(points[idx[0]], points[idx[len(idx)-1]])
-	return
+	sum += p2p(points[idx[0]], points[idx[len(idx)-1]]);
+	return sum;
 }
 
 fn main() {
-	idx := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
+	let idx : [i32; 12] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
 	points := []Points{
 		Points{1, 1},

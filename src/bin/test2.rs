@@ -12,7 +12,7 @@ fn fill(a: &mut [i8], s: usize) {
 }
 
 fn main() {
- const SIZE: usize = 200000;
+ const SIZE: usize = 20000;
  let mut x: [i8; SIZE/2] = [0; SIZE/2];
  let mut y: [i8; SIZE/2] = [0; SIZE/2];
  let mut r: [i8; SIZE] = [0; SIZE];

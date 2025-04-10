@@ -1,2 +1,17 @@
+[package]
+name = "hello_world" # the name of the package
+version = "0.1.0"    # the current version, obeying semver
+authors = ["Kacper Marczewski"]
+description = "A short description of my package"
+
 [dependencies]
-rand = "0.8.4"
+rand = "0.9.0"
+
+[[bin]]
+name = "salesman"
+
+[[bin]]
+name = "test1"
+
+[[bin]]
+name = "test2"
