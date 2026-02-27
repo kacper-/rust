@@ -4,6 +4,9 @@ version = "0.1.0"    # the current version, obeying semver
 authors = ["Kacper Marczewski"]
 description = "A short description of my package"
 
+[dependencies]
+postgres = "0.19.12"
+
 [[bin]]
 name = "test1"
 
